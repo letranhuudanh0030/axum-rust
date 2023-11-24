@@ -1,15 +1,12 @@
-use crate::model;
-use derive_more::From;
-
 pub type Result<T> = core::result::Result<T, Error>;
 
-#[derive(Debug, From)]
+#[derive(Debug)]
 pub enum Error {
-    // -- Modules
-    // Model(model::Error),
+    MissingEnv(&'static str),
+    WrongFormat(&'static str),
 }
 
-// region:    --- Error boilerplate
+// region:    --- Error Boilerplate
 impl core::fmt::Display for Error {
     fn fmt(&self, fmt: &mut core::fmt::Formatter) -> core::result::Result<(), core::fmt::Error> {
         write!(fmt, "{self:?}")
@@ -17,4 +14,4 @@ impl core::fmt::Display for Error {
 }
 
 impl std::error::Error for Error {}
-// endRegion: --- Error boilerplate
+// endRegion: --- Error Boilerplate

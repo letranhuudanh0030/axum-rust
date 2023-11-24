@@ -43,4 +43,4 @@ async fn delete_ticket(
     let ticket = mc.delete_ticket(ctx, id).await?;
     Ok(Json(ticket))
 }
-// endregion
+// endRegion

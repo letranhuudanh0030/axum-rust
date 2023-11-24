@@ -71,7 +71,7 @@ impl<S: Send + Sync> FromRequestParts<S> for Ctx {
             .clone()
     }
 }
-// endregion
+// endRegion
 
 fn parse_token(token: String) -> Result<(u64, String, String)> {
     let (_whole, user_id, exp, sign) = regex_captures!(
